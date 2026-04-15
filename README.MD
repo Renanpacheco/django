@@ -18,9 +18,9 @@ O projeto segue uma arquitetura organizada por camadas (Layer-Based), promovendo
 
 O projeto está estruturado com base em boas práticas modernas:
 
-* **src/** → Domínios da aplicação (ex: eventos)
-* **users/** → Controle dos usuários
-* **Events/** → Controle dos eventos
+* **apps/** → Domínios da aplicação (ex: eventos)
+* **user/** → Controle dos usuários
+* **Event/** → Controle dos eventos
 
 
 ---
