@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login | Agendador de Eventos</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="main-container">
+        <section class="login-box">
+            <h1>Bem-vindo</h1>
+            <p>Acesse sua conta para gerenciar eventos.</p>
+            
+            <form>
+                <div class="input-group">
+                    <label for="email">E-mail</label>
+                    <input type="email" id="email" name="email" placeholder="seu@email.com" required>
+                </div>
+                
+                <div class="input-group">
+                    <label for="password">Senha</label>
+                    <input type="password" id="password" name="password" placeholder="••••••••" required>
+                </div>
+                
+                <button type="submit" class="btn-primary">Entrar</button>
+            </form>
+            
+            <p class="footer-text">Não tem conta? <a href="{% url 'cadastro' %}">Cadastre-se</a></p>
+            <p class="footer-text"><a href="{% url 'index' %}">Home</a></p>
+        </section>
+    </div>
+</body>
+</html>

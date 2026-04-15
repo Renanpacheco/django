@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>HOME</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="main-container">
+        <section class="login-box">
+            <h1>Bem-vinda!</h1>
+            <p>Você acessou o sistema com sucesso.</p>
+
+            <div style="display: flex; flex-direction: column; gap: 10px;">
+                <a href="{% url 'login' %}" class="footer-text">Sair (Voltar ao Login)</a>
+                <a href="{% url 'cadastro' %}" class="footer-text">Ir para Cadastro</a>
+            </div>
+        </section>
+    </div>
+
+    
+</body>
+</html>

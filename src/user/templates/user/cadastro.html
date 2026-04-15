@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Cadastro | Agende seu Evento</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="main-container">
+        <section class="login-box">
+            <h1>Criar Conta</h1>
+            <p>Preencha os dados para começar.</p>
+            
+            <form>
+                <div class="input-group">
+                    <label>Nome Completo</label>
+                    <input type="text" name="nome" placeholder="Ex: Izadora Souza" required>
+                </div>
+                <div class="input-group">
+                    <label>E-mail</label>
+                    <input type="email" name="email" placeholder="seu@email.com" required>
+                </div>
+                <div class="input-group">
+                    <label>Senha</label>
+                    <input type="password" name="password" placeholder="Crie uma senha" required>
+                </div>
+                <button type="submit" class="btn-primary">Cadastrar</button>
+            </form>
+            <p class="footer-text">Já tem conta? <a href="{% url 'login' %}">Faça login</a></p>
+            <p class="footer-text">Home <a href="{% url 'index' %}">Cadastre-se</a></p>
+        </section>
+    </div>
+</body>
+</html>
