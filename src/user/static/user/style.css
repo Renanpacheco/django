@@ -1,0 +1,170 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Inter', sans-serif;
+}
+
+body {
+    background-color: #f4f7f6; 
+    display: flex;
+    justify-content: center;
+    align-items: flex-start; /* Mudamos de center para flex-start */
+    min-height: 100vh;       /* Mudamos de height para min-height */
+    padding-top: 50px;       /* Um espacinho no topo */
+}
+
+.main-container {
+    width: 100%;
+    max-width: 900px; /* Aumentamos para caber os cards lado a lado */
+    padding: 20px;
+}
+
+.login-box {
+    background: #ffffff;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05); 
+    text-align: center;
+}
+
+h1 {
+    font-weight: 600;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+p {
+    color: #666;
+    font-size: 0.9rem;
+    margin-bottom: 30px;
+}
+
+.input-group {
+    text-align: left;
+    margin-bottom: 20px;
+}
+
+label {
+    display: block;
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: #444;
+    margin-bottom: 8px;
+}
+
+input {
+    width: 100%;
+    padding: 12px 15px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    font-size: 1rem;
+    transition: border 0.3s ease;
+}
+
+input:focus {
+    outline: none;
+    border-color: #6c63ff; 
+}
+
+.btn-primary {
+    width: 100%;
+    padding: 12px;
+    background-color: #6c63ff;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.3s ease;
+    margin-top: 10px;
+}
+
+.btn-primary:hover {
+    background-color: #5a52d5;
+}
+
+.footer-text {
+    margin-top: 25px;
+    font-size: 0.85rem;
+}
+
+.footer-text a {
+    color: #6c63ff;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+/* --- Estilos da Grade de Eventos --- */
+
+.home-header {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.events-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 20px;
+    width: 100%;
+}
+
+.event-card {
+    background: #ffffff;
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    transition: transform 0.3s ease;
+}
+
+.event-card:hover {
+    transform: translateY(-5px);
+}
+
+.event-card h3 {
+    color: #333;
+    font-size: 1.2rem;
+    margin-bottom: 5px;
+}
+
+.event-info {
+    font-size: 0.85rem;
+    color: #666;
+}
+
+.event-info strong {
+    color: #444;
+}
+
+.event-description {
+    font-size: 0.9rem;
+    color: #777;
+    line-height: 1.4;
+    margin: 10px 0;
+}
+
+/* Reaproveitando seu padrão de botão para o "Salvar na Agenda" */
+.btn-save {
+    background-color: #6c63ff;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    padding: 10px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.3s ease;
+    text-align: center;
+    text-decoration: none;
+    font-size: 0.85rem;
+}
+
+.btn-save:hover {
+    background-color: #5a52d5;
+}

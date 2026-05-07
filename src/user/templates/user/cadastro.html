@@ -3,7 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <title>Cadastro | Agende seu Evento</title>
-    <link rel="stylesheet" href="style.css">
+    {% load static %}
+<link rel="stylesheet" href="{% static 'user/style.css' %}">
 </head>
 <body>
     <div class="main-container">
@@ -11,21 +12,33 @@
             <h1>Criar Conta</h1>
             <p>Preencha os dados para começar.</p>
             
-            <form>
-                <div class="input-group">
-                    <label>Nome Completo</label>
-                    <input type="text" name="nome" placeholder="Ex: Izadora Souza" required>
-                </div>
-                <div class="input-group">
-                    <label>E-mail</label>
-                    <input type="email" name="email" placeholder="seu@email.com" required>
-                </div>
-                <div class="input-group">
-                    <label>Senha</label>
-                    <input type="password" name="password" placeholder="Crie uma senha" required>
-                </div>
-                <button type="submit" class="btn-primary">Cadastrar</button>
-            </form>
+            <form method="POST">
+    {% csrf_token %}
+    
+    <div class="input-group">
+        <label>Nome Completo</label>
+        {{ form.nome }}
+        {{ form.nome.errors }}
+    </div>
+
+    <div class="input-group">
+        <label>E-mail</label>
+        {{ form.email }}
+        {{ form.email.errors }}
+    </div>
+
+    <div class="input-group">
+        <label>Senha</label>
+        {{ form.password }}
+        {% if form.password.errors %}
+            <div style="color: red; font-size: 12px;">
+                {{ form.password.errors }}
+            </div>
+        {% endif %}
+    </div>
+
+    <button type="submit" class="btn-primary">Cadastrar</button>
+</form>
             <p class="footer-text">Já tem conta? <a href="{% url 'login' %}">Faça login</a></p>
             <p class="footer-text">Home <a href="{% url 'index' %}">Cadastre-se</a></p>
         </section>

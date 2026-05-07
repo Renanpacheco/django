@@ -1,24 +1,41 @@
-<!DOCTYPE html>
+{% load static %} <!DOCTYPE html>
 <html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <title>HOME</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="{% static 'user/style.css' %}">
 </head>
 <body>
 
-    <div class="main-container">
-        <section class="login-box">
-            <h1>Bem-vinda!</h1>
-            <p>Você acessou o sistema com sucesso.</p>
+    {% load static %}
+<div class="main-container">
+    <header class="home-header">
+        <h1>Escolha seu evento</h1>
+        <p>E marque na sua agenda!</p>
+    </header>
 
-            <div style="display: flex; flex-direction: column; gap: 10px;">
-                <a href="{% url 'login' %}" class="footer-text">Sair (Voltar ao Login)</a>
-                <a href="{% url 'cadastro' %}" class="footer-text">Ir para Cadastro</a>
-            </div>
-        </section>
+    <section class="events-grid">
+    {% for evento in eventos %}
+    <div class="event-card">
+        <h3>{{ evento.nome }}</h3>
+        <div class="event-info">
+            <p><strong>Horário:</strong> {{ evento.horario }}</p>
+            <p><strong>Local:</strong> {{ evento.local }}</p>
+        </div>
+        <p class="event-description">
+            {{ evento.descricao }}
+        </p>
+        <button class="btn-save">Salvar na Agenda</button>
     </div>
+    {% empty %}
+    <p>Nenhum evento para mostrar.</p>
+    {% endfor %}
+</section>
 
-    
+    <div class="footer-text" style="text-align: center;">
+        <a href="{% url 'login' %}">Sair do sistema</a>
+    </div>
+</div>
+
 </body>
 </html>
