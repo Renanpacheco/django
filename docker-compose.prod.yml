@@ -9,7 +9,7 @@ services:
     container_name: django_prod
 
     ports:
-      - "8000:8000"
+      - "3020:3020"
 
     environment:
       DJANGO_DEBUG: "False"
