@@ -1,0 +1,29 @@
+version: "3.9"
+
+services:
+  django:
+    build:
+      context: .
+      dockerfile: Dockerfile
+
+    container_name: django_prod
+
+    ports:
+      - "8000:8000"
+
+    environment:
+      DJANGO_DEBUG: "False"
+      DJANGO_SECRET_KEY: ${DJANGO_SECRET_KEY}
+
+    command: >
+      sh -c "
+      gunicorn event.wsgi:application --bind 0.0.0.0:8000
+      "
+
+    restart: always
+
+    healthcheck:
+      test: ["CMD", "sh", "/app/docker/healthcheck.sh"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
