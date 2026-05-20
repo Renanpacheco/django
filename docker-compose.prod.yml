@@ -12,7 +12,7 @@ services:
       - "3021:3021"
     
     volumes:
-      - ./django/src:/app
+      - ./src:/app
       - ./docker:/app/docker
 
     environment:
