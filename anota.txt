@@ -1,0 +1,37 @@
+1. registro.br registrar o domínio
+2. registar no cloudflare e colocar dominio
+3. dentro do registro.br, configurar para o dns da cloudflare
+4. definir um servidor vps
+5. no terminal ssh root@ipDoVPS
+6. colocar os dados para logar
+7. update no servidor
+8. instalar git e Docker
+9. clonar o repositório
+10. executar o container
+11. configurar o túnel na cloudflare
+12. adicionar o token no container
+13. adicionar rotas de aplicativos
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+porta 3020 até 3029
+ssh renan@95.111.238.203
+senha123
+docker compose -f docker-compose.prod.yml up -d //para subir
+docker composse down //para derrubar
+command: >
+      sh -c "
+      gunicorn event.wsgi:application --bind 0.0.0.0:8000
+      "
+
